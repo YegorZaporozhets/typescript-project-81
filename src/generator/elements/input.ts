@@ -6,8 +6,7 @@ export default class Input implements IElement {
 
   private defaultAttributes: AttributesType = { type: 'text' };
 
-  constructor(private attributes: AttributesType) {
-  }
+  constructor(public attributes: AttributesType = {}) {}
 
   public toString() {
     return new Tag(

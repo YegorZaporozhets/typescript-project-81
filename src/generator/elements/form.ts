@@ -8,7 +8,7 @@ export default class Form implements IElement {
 
   public tagName: keyof HTMLElementTagNameMap = 'form';
 
-  constructor(private attributes: AttributesType, private template: TemplateType) {}
+  constructor(public attributes: AttributesType = {}, private template: TemplateType = {}) {}
 
   public input(fieldName: string, { as, ...pureAttributes }: AttributesType = {}) {
     if (!this.template[fieldName]) {
@@ -23,12 +23,38 @@ export default class Form implements IElement {
     );
   }
 
+  public submit(value: string = 'Save') {
+    this.fields.push(
+      Form.createNewField({ type: 'submit', value }),
+    );
+  }
+
   public toString() {
     return new Tag(
       this.tagName,
       this.attributes,
-      this.fields.reduce((strFields, field) => strFields + field.toString(), ''),
+      this.fieldsToString(),
     ).toString();
+  }
+
+  private fieldsToString(): string {
+    return this.fields.reduce((strFields, field) => {
+      if (field.tagName === 'input' && field.attributes.type === 'submit') {
+        return strFields + field.toString();
+      }
+
+      if (field.attributes.name) {
+        return strFields + Form.getFieldLabelString(field.attributes.name) + field.toString();
+      }
+
+      return strFields + field.toString();
+    }, '');
+  }
+
+  private static getFieldLabelString(name: string): string {
+    const labelSlot = String(name).charAt(0).toUpperCase() + String(name).slice(1).toLowerCase();
+
+    return new Tag('label', { for: name }, labelSlot).toString();
   }
 
   private static createNewField(attributes: AttributesType, as: keyof HTMLElementTagNameMap = 'input'): Input | Textarea | Tag {

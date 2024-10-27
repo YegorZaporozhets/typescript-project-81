@@ -6,8 +6,7 @@ export default class Textarea implements IElement {
 
   private defaultAttributes: AttributesType = { cols: '20', rows: '40' };
 
-  constructor(private attributes: AttributesType) {
-  }
+  constructor(public attributes: AttributesType = {}) {}
 
   public toString() {
     const { value, ...otherAttributes } = this.attributes;
