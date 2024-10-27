@@ -8,7 +8,7 @@ export default class HexletCode {
     cb: (form: Form) => void,
   ) {
     const form = new Form(
-      { action: url ?? '#', method: method ?? 'post' },
+      { method: method ?? 'post', action: url ?? '#' },
       formTemplate,
     );
 
