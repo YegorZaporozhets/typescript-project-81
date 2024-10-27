@@ -17,11 +17,11 @@ describe('Test Tag generator', () => {
 
 describe('Test formFor:', () => {
   test('Empty Form', () => {
-    expect(HexletCode.formFor({}, {}, () => {})).toBe('<form action="#" method="post"></form>');
+    expect(HexletCode.formFor({}, {}, () => {})).toBe('<form method="post" action="#"></form>');
   });
 
   test('Form with action url', () => {
-    expect(HexletCode.formFor({}, { url: '/users' }, () => {})).toBe('<form action="/users" method="post"></form>');
+    expect(HexletCode.formFor({}, { url: '/users' }, () => {})).toBe('<form method="post" action="/users"></form>');
   });
 
   test('Form with input fields', () => {
