@@ -3,7 +3,7 @@
     "target": "ES2022",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "es2015",
+    "module": "es2022",
     "moduleResolution": "bundler",
     "baseUrl": "./",
     "declaration": true,

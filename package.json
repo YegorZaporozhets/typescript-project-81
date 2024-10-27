@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/YegorZaporozhets/typescript-project-81/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/YegorZaporozhets/typescript-project-81/actions)",
   "main": "index.js",
+  "module": "/dist/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "start:dev": "npx nodemon",
