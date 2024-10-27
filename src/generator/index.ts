@@ -2,7 +2,7 @@ import { OptionsType, TemplateType } from '../types';
 import Form from './elements/form';
 
 export default class HexletCode {
-  public static forForm(
+  public static formFor(
     formTemplate: TemplateType,
     { url, method }: OptionsType,
     cb: (form: Form) => void,

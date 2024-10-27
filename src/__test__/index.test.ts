@@ -15,20 +15,20 @@ describe('Test Tag generator', () => {
   });
 });
 
-describe('Test forForm:', () => {
+describe('Test formFor:', () => {
   test('Empty Form', () => {
-    expect(HexletCode.forForm({}, {}, () => {})).toBe('<form action="#" method="post"></form>');
+    expect(HexletCode.formFor({}, {}, () => {})).toBe('<form action="#" method="post"></form>');
   });
 
   test('Form with action url', () => {
-    expect(HexletCode.forForm({}, { url: '/users' }, () => {})).toBe('<form action="/users" method="post"></form>');
+    expect(HexletCode.formFor({}, { url: '/users' }, () => {})).toBe('<form action="/users" method="post"></form>');
   });
 
   test('Form with input fields', () => {
     sampleData.forEach(({
       template, formOptions, cb, result,
     }) => {
-      expect(HexletCode.forForm(
+      expect(HexletCode.formFor(
         template,
         formOptions,
         cb,
