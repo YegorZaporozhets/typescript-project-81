@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { describe, expect, test } from 'vitest';
 import Tag from '../generator/elements/tag';
 import sampleDataTag from '../__fixtures__/tag';
@@ -17,11 +16,11 @@ describe('Test Tag generator', () => {
 
 describe('Test formFor:', () => {
   test('Empty Form', () => {
-    expect(HexletCode.formFor({}, {}, () => {})).toBe('<form method="post" action="#"></form>');
+    expect(HexletCode.formFor({}, {}, () => 0)).toBe('<form method="post" action="#"></form>');
   });
 
   test('Form with action url', () => {
-    expect(HexletCode.formFor({}, { url: '/users' }, () => {})).toBe('<form method="post" action="/users"></form>');
+    expect(HexletCode.formFor({}, { url: '/users' }, () => 0)).toBe('<form method="post" action="/users"></form>');
   });
 
   test('Form with input fields', () => {

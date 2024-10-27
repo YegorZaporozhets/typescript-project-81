@@ -23,7 +23,7 @@ export default class Form implements IElement {
     );
   }
 
-  public submit(value: string = 'Save') {
+  public submit(value = 'Save') {
     this.fields.push(
       Form.createNewField({ type: 'submit', value }),
     );

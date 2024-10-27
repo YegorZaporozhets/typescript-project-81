@@ -1,6 +1,6 @@
 const sampleData: {
   tag: keyof HTMLElementTagNameMap,
-  attributes?: { [key: string]: string },
+  attributes?: Record<string, string>,
   slot?: string,
   resultString: string
 }[] = [

@@ -6,7 +6,7 @@ export default class Tag implements IElement {
   constructor(
     public tagName: keyof HTMLElementTagNameMap = 'div',
     public attributes: AttributesType = {},
-    public slot: string = '',
+    public slot = '',
   ) {}
 
   public toString(): string {
