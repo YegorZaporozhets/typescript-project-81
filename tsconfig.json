@@ -3,8 +3,7 @@
     "target": "ES2022",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "es2022",
-    "moduleResolution": "bundler",
+    "module": "commonjs",
     "baseUrl": "./",
     "declaration": true,
     "sourceMap": true,
@@ -12,12 +11,11 @@
     "importHelpers": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "*.test.ts"
+    "src/**/*",
   ]
 }
