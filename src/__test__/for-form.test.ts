@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { describe, expect, test } from 'vitest';
 import HexletCode from '../generator';
 import sampleData from '../__fixtures__/for-form';
