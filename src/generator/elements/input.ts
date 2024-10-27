@@ -9,9 +9,14 @@ export default class Input implements IElement {
   constructor(public attributes: AttributesType = {}) {}
 
   public toString() {
+    const { name, ...otherAttributes } = this.attributes;
+    const additionalAttributes = name
+      ? { name, ...this.defaultAttributes }
+      : this.defaultAttributes;
+
     return new Tag(
       this.tagName,
-      { ...this.defaultAttributes, ...this.attributes },
+      { ...additionalAttributes, ...otherAttributes },
     ).toString();
   }
 }
