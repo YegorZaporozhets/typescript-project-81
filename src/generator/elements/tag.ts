@@ -1,10 +1,12 @@
-export default class Tag {
+import { AttributesType, IElement } from '../types';
+
+export default class Tag implements IElement {
   public singleTags = ['img', 'br', 'input', 'hr'];
 
   constructor(
     public tagName: keyof HTMLElementTagNameMap = 'div',
-    public attributes: { [key: string]: string } = {},
-    public slot: string = '',
+    private attributes: AttributesType = {},
+    private slot: string = '',
   ) {}
 
   public toString(): string {
@@ -15,7 +17,7 @@ export default class Tag {
     } = this;
 
     const htmlAttributes = Object.entries(attributes).map<string>(
-      ([key, value]) => `${key}="${value}"`,
+      ([key, value]) => `${key}="${value ?? ''}"`,
     );
     const tagString = `<${tagName}${htmlAttributes.length ? ` ${htmlAttributes.join(' ')}` : ''}>`;
 

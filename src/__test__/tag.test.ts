@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import Tag from '../generator/tag';
+import Tag from '../generator/elements/tag';
 import sampleData from '../__fixtures__/tag';
 
 describe('Test Tag generator', () => {
