@@ -1,4 +1,4 @@
-import { AttributesType, IElement } from '../types';
+import { AttributesType, IElement } from '../../types';
 
 export default class Tag implements IElement {
   public singleTags = ['img', 'br', 'input', 'hr'];

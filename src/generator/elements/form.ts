@@ -1,4 +1,4 @@
-import { AttributesType, IElement, TemplateType } from '../types';
+import { AttributesType, IElement, TemplateType } from '../../types';
 import Tag from './tag';
 import Input from './input';
 import Textarea from './textarea';

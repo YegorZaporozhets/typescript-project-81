@@ -1,4 +1,4 @@
-import { OptionsType, TemplateType } from './types';
+import { OptionsType, TemplateType } from '../types';
 import Form from './elements/form';
 
 export default class HexletCode {

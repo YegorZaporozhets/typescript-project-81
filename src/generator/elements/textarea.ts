@@ -1,4 +1,4 @@
-import { AttributesType, IElement } from '../types';
+import { AttributesType, IElement } from '../../types';
 import Tag from './tag';
 
 export default class Textarea implements IElement {

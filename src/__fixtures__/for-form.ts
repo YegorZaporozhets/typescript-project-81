@@ -1,4 +1,4 @@
-import { OptionsType, TemplateType } from '../generator/types';
+import { OptionsType, TemplateType } from '../types';
 import Form from '../generator/elements/form';
 
 const template: TemplateType = { name: 'rob', job: 'hexlet', gender: 'm' };
